@@ -1,0 +1,198 @@
+/* Base */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; background:#f0f2f8; color:#2c3e50; }
+
+/* HERO */
+header {
+  position: relative;
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+header .hero-img {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+header .hero-overlay {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.4);
+  z-index:1;
+}
+header h1, header p, .btn-hero {
+  position:relative; z-index:2;
+}
+header h1 {
+  font-size:3rem;
+  color:white;
+  margin-bottom:1rem;
+}
+header p {
+  font-size:1.3rem;
+  color:white;
+  margin-bottom:2rem;
+}
+
+/* Botón hero con icono SVG */
+.btn-hero.whatsapp-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: #25D366;
+  color: white;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(37,211,102,0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-hero.whatsapp-hero:hover {
+  background-color: #1aaa53;
+  transform: scale(1.05);
+}
+
+.btn-hero.whatsapp-hero .hero-icon {
+  width: 24px;
+  height: 24px;
+  fill: white; /* el color del SVG será blanco */
+}
+
+/* SERVICIOS */
+section#servicios {
+  padding:4rem 1rem;
+  text-align:center;
+}
+section#servicios h2 {
+  color:#0066ff;
+  font-size:2.2rem;
+  margin-bottom:2rem;
+  border-bottom:3px solid #0066ff;
+  display:inline-block;
+}
+
+/* Grid - 3 columnas y 2 filas */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */ 
+  gap:2rem;
+  max-width:1200px;
+  margin:0 auto; /* centra el grid en la pantalla */
+  justify-items: center; /* centra las tarjetas dentro de su celda */ 
+}
+
+.servicio-card {
+  background:white;
+  border-radius:18px;
+  padding:2rem;
+  width:100%;
+  max-width:320px;
+  box-shadow:0 5px 15px rgba(0,102,255,0.15);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.servicio-card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,102,255,0.3);
+}
+.servicio-icon {
+  font-size:3.5rem;
+  margin-bottom:1rem;
+}
+.servicio-card h3 {
+  font-size:1.4rem;
+  margin-bottom:0.8rem;
+}
+.servicio-card p {
+  font-size:1rem;
+  color:#444;
+}
+
+/* CONTACTO */
+section#contacto {
+  padding:4rem 1rem;
+  background:#f9f9f9;
+  text-align:center;
+}
+
+section#contacto h2 {
+  color:#0066ff;
+  font-size:2rem;
+  margin-bottom:1rem;
+  border-bottom:3px solid #0066ff;
+}
+
+section#contacto p {
+  font-size:1.2rem;
+  margin-bottom:2rem;
+  color:#555;
+}
+
+.contacto-container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1.5rem;
+}
+
+/* Botones de contacto con color según plataforma */
+.contacto-btn {
+  color:white;
+  font-weight:700;
+  padding:1rem 2rem;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:1.2rem;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Colores por plataforma */
+.contacto-btn.facebook {
+  background-color:#1877F2; /* Azul Facebook oficial */ 
+}
+
+.contacto-btn.whatsapp {
+  background-color:#25D366; /* Verde WhatsApp */ 
+}
+
+.contacto-btn.phone {
+  background-color:#007BFF; /* Azul para llamada */ 
+}
+
+.contacto-btn.email {
+  background-color:#D44638; /* Rojo correo / Gmail‑style */ 
+}
+
+/* Hover effects */
+.contacto-btn:hover {
+  transform:scale(1.05);
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+/* FOOTER */
+footer {
+  background:#e1e8f7;
+  padding:2rem 1rem;
+  text-align:center;
+  border-top:3px solid #0066ff;
+  color:#78909c;
+  font-size:0.95rem;
+}
+
+/* Responsive */
+@media(max-width:900px) {
+  .servicios-grid {
+    grid-template-columns: 1fr; /* 1 por fila en móvil */
+  }
+}
